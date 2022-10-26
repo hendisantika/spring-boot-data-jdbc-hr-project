@@ -5,6 +5,8 @@ import com.hendisantika.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * Project : spring-boot-data-jdbc-hr-project
@@ -39,5 +41,9 @@ public class EmployeeService {
 
     public Employee update(Employee emp) {
         return employeeRepository.save(emp);
+    }
+
+    public List<Employee> findByName(String name) {
+        return employeeRepository.findByName(name);
     }
 }
