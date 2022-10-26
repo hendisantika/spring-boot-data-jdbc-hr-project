@@ -1,5 +1,6 @@
 package com.hendisantika.service;
 
+import com.hendisantika.entity.Employee;
 import com.hendisantika.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,9 @@ public class EmployeeService {
 
     public long count() {
         return employeeRepository.count();
+    }
+
+    public Employee findById(Long id) {
+        return employeeRepository.findById(id).get();
     }
 }
