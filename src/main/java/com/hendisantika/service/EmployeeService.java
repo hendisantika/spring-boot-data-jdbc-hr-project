@@ -3,6 +3,7 @@ package com.hendisantika.service;
 import com.hendisantika.entity.Employee;
 import com.hendisantika.repository.EmployeeRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,5 +50,9 @@ public class EmployeeService {
 
     public List<Employee> findByEmployeeId(String name) {
         return employeeRepository.findByEmployeeId(name);
+    }
+
+    public List<Employee> findByNameAndSalary(@Param("empName") String name, @Param("empSalary") Double salary) {
+        return employeeRepository.findByNameAndSalary(name, salary);
     }
 }
