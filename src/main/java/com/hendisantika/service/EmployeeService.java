@@ -28,4 +28,8 @@ public class EmployeeService {
     public Employee findById(Long id) {
         return employeeRepository.findById(id).get();
     }
+
+    public Iterable<Employee> findAll() {
+        return employeeRepository.findAll();
+    }
 }
