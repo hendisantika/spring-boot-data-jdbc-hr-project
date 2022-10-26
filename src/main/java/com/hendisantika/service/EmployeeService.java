@@ -55,4 +55,8 @@ public class EmployeeService {
     public List<Employee> findByNameAndSalary(@Param("empName") String name, @Param("empSalary") Double salary) {
         return employeeRepository.findByNameAndSalary(name, salary);
     }
+
+    public void deleteById(Long id) {
+        employeeRepository.deleteById(id);
+    }
 }
