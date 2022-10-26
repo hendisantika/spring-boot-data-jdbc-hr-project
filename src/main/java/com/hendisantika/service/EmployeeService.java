@@ -19,4 +19,8 @@ import org.springframework.stereotype.Service;
 public class EmployeeService {
 
     private final EmployeeRepository employeeRepository;
+
+    public long count() {
+        return employeeRepository.count();
+    }
 }
