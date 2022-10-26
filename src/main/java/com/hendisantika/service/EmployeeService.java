@@ -59,4 +59,8 @@ public class EmployeeService {
     public void deleteById(Long id) {
         employeeRepository.deleteById(id);
     }
+
+    public int updateSalary(Double salary, Long id) {
+        return employeeRepository.updateSalary(salary, id);
+    }
 }
