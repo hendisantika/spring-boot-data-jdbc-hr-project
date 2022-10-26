@@ -32,4 +32,8 @@ public class EmployeeService {
     public Iterable<Employee> findAll() {
         return employeeRepository.findAll();
     }
+
+    public Employee insert(Employee emp) {
+        return employeeRepository.save(emp);
+    }
 }
