@@ -1,5 +1,6 @@
 package com.hendisantika.controller;
 
+import com.hendisantika.entity.Employee;
 import com.hendisantika.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -38,5 +39,10 @@ public class EmployeeController {
     public ResponseEntity<?> findById(@PathVariable Long id, @RequestHeader("accept-language") String acceptLanguage) {
         log.info(" Accept Language is " + acceptLanguage);
         return ResponseEntity.ok(employeeService.findById(id));
+    }
+
+    @GetMapping("")
+    public Iterable<Employee> findAll() {
+        return employeeService.findAll();
     }
 }
