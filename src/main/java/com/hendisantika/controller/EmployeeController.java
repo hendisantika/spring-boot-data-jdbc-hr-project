@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -57,5 +60,10 @@ public class EmployeeController {
     @PutMapping("")
     public Employee updateEmp(@RequestBody Employee emp) {
         return employeeService.update(emp);
+    }
+
+    @GetMapping("/filter")
+    public List<Employee> filter(@RequestParam String name, @RequestParam Double salary) {
+        return employeeService.findByNameAndSalary(name, salary);
     }
 }
