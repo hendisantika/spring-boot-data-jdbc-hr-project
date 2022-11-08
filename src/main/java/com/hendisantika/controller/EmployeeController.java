@@ -29,7 +29,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 @RestController
-@RequestMapping("/api/v1/employee")
+@RequestMapping("/api/v1/employees")
 @RequiredArgsConstructor
 public class EmployeeController {
 
@@ -47,17 +47,17 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeService.findById(id));
     }
 
-    @GetMapping("")
+    @GetMapping
     public Iterable<Employee> findAll() {
         return employeeService.findAll();
     }
 
-    @PostMapping("")
+    @PostMapping
     public Employee addEmp(@RequestBody Employee emp) {
         return employeeService.insert(emp);
     }
 
-    @PutMapping("")
+    @PutMapping
     public Employee updateEmp(@RequestBody Employee emp) {
         return employeeService.update(emp);
     }
